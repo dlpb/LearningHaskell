@@ -28,3 +28,10 @@ map f xs = case xs of
 		cons 
 			(f (D.head x))
 			(D.map f (D.tail x))
+
+filter :: (a -> Bool) -> Cell a -> Cell a
+filter f xs = case xs of 
+	Nil -> Nil
+	x -> case (f (D.head x)) of
+		True -> cons (D.head x) (D.filter f (D.tail x))
+		False -> D.filter f (D.tail x)
