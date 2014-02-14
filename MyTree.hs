@@ -1,7 +1,5 @@
 module T where
-	import Debug.Trace
-
-
+	
 	data Node = Nil | Node {
 		d :: Int,
 		l :: Node,
